@@ -1,0 +1,30 @@
+﻿@using ReadList.Services.Models
+
+@model List<MangaViewModel>;
+
+@{
+  ViewData["Title"] = "All Mangas";
+}
+
+<h1>@ViewData["Title"] - Using Web API With Controller</h1>
+<a asp-action="Create" class="btn btn-sm btn-primary">Create</a>
+<table class="table table-striped">
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Actions</th>
+  </tr>
+  <tbody id="Mangas">
+    @foreach(MangaViewModel manga in Model){
+      <tr>
+        <td>@manga.Id</td>
+        <td>@manga.Name</td>
+        <td>
+          <a asp-action="Details" asp-route-id="@manga.Id" class="btn btn-sm btn-primary">Details</a>
+          <a asp-action="Edit" asp-route-id="@manga.Id" class="btn btn-sm btn-primary">Edit</a>
+          <a asp-action="Delete" asp-route-id="@manga.Id" class="btn btn-sm btn-danger">Delete</a>
+        </td>
+      </tr>
+    }
+  </tbody>
+</table>

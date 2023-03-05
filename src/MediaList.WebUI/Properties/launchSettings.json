@@ -19,7 +19,7 @@
     "IIS Hosted": {
       "commandName": "IIS",
       "launchBrowser": true,
-      "launchUrl": "https://dev.MediaList.jonathanmm",
+      "launchUrl": "https://dev.medialist.jonathanmm",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
@@ -29,7 +29,7 @@
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iis": {
-      "applicationUrl": "https://dev.MediaList.jonathanmm",
+      "applicationUrl": "https://dev.medialist.jonathanmm",
       "sslPort": 0
     },
     "iisExpress": {

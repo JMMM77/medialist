@@ -9,6 +9,8 @@ namespace MediaList.Services.Configuration
         public static IServiceCollection AddMediaListServices(this IServiceCollection services)
         {
             services.AddAutoMapper(typeof(MangaProfile));
+            services.AddScoped<IGenreService, GenreService>();
+            services.AddScoped<IMediaTypeService, MediaTypeService>();
             services.AddScoped<IMangaService, MangaService>();
 
             return services;

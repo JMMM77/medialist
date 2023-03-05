@@ -1,4 +1,5 @@
-﻿using MediaList.Data.Infrastructure;
+﻿using MediaList.Data.Constants;
+using MediaList.Data.Infrastructure;
 using MediaList.Data.Interfaces;
 
 namespace MediaList.Data.Configuration
@@ -9,6 +10,8 @@ namespace MediaList.Data.Configuration
         {
 
             services.AddSingleton<MediaListDbContext>();
+            services.AddSingleton<IGenreRepository, GenreRepository>();
+            services.AddSingleton<IMediaTypeRepository, MediaTypeRepository>();
             services.AddSingleton<IMangaRepository, MangaRepository>();
 
             return services;

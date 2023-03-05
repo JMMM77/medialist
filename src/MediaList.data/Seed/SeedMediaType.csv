@@ -1,0 +1,13 @@
+﻿Name Of MediaType,Id,Enter Formula
+Anime,1,", new() {Id=""1"",Name=""Anime"",Description=""Anime""}"
+Commercial Radio,2,", new() {Id=""2"",Name=""Commercial Radio"",Description=""Commercial Radio""}"
+Film,3,", new() {Id=""3"",Name=""Film"",Description=""Film""}"
+Magazine,4,", new() {Id=""4"",Name=""Magazine"",Description=""Magazine""}"
+Manga,5,", new() {Id=""5"",Name=""Manga"",Description=""Manga""}"
+Manhua,6,", new() {Id=""6"",Name=""Manhua"",Description=""Manhua""}"
+Manhwa,7,", new() {Id=""7"",Name=""Manhwa"",Description=""Manhwa""}"
+Music,8,", new() {Id=""8"",Name=""Music"",Description=""Music""}"
+Newspaper,9,", new() {Id=""9"",Name=""Newspaper"",Description=""Newspaper""}"
+Novel,10,", new() {Id=""10"",Name=""Novel"",Description=""Novel""}"
+Public Broadcasting,11,", new() {Id=""11"",Name=""Public Broadcasting"",Description=""Public Broadcasting""}"
+Television,12,", new() {Id=""12"",Name=""Television"",Description=""Television""}"

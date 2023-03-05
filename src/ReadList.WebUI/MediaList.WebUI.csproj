@@ -7,11 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ReadList.data\MediaList.Data.csproj" />
+    <ProjectReference Include="..\MediaList.data\MediaList.Data.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ReadList.Services\MediaList.Services.csproj" />
+    <ProjectReference Include="..\MediaList.Services\MediaList.Services.csproj" />
   </ItemGroup>
 
 </Project>

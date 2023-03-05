@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
-using ReadList.Data.Models;
-using ReadList.Services.Models;
+using MediaList.Data.Models;
+using MediaList.Services.Models;
 
-namespace ReadList.Services.Mappings
+namespace MediaList.Services.Mappings
 {
     public class MangaProfile : Profile
     {

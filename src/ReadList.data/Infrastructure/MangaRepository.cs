@@ -1,14 +1,14 @@
 ﻿using MongoDB.Driver;
-using ReadList.Data.Interfaces;
-using ReadList.Data.Models;
+using MediaList.Data.Interfaces;
+using MediaList.Data.Models;
 
-namespace ReadList.Data.Infrastructure
+namespace MediaList.Data.Infrastructure
 {
     public class MangaRepository : IMangaRepository
     {
         private readonly IMongoCollection<Manga> _MangasCollection;
 
-        public MangaRepository(ReadListDbContext context)
+        public MangaRepository(MediaListDbContext context)
         {
             _MangasCollection = context.Mangas;
         }

@@ -1,9 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using ReadList.Data.Models;
-using ReadList.Services.Interfaces;
-using ReadList.Services.Services;
+using MongoDB.Driver;
+using MediaList.Data.Models;
+using MediaList.Services.Interfaces;
+using MediaList.Services.Services;
 
-namespace ReadList.WebUI.Controllers
+namespace MediaList.WebUI.Controllers
 {
     public class MangasController : Controller
     {
@@ -20,9 +21,38 @@ namespace ReadList.WebUI.Controllers
             return View(mangas);
         }
 
-        public IActionResult Details()
+        public IActionResult Create()
         {
             return View();
         }
+
+        public async Task<IActionResult> Details(string? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var manga = await _mangaService.Get(id);
+
+            if (manga == null)
+            {
+                return NotFound();
+            }
+
+            return View();
+        }
+
+        public IActionResult Edit()
+        {
+            return View();
+        }
+
+        public IActionResult Delete()
+        {
+            return View();
+        }
+
+
     }
 }

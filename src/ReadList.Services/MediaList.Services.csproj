@@ -13,7 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ReadList.data\ReadList.Data.csproj" />
+    <ProjectReference Include="..\ReadList.data\MediaList.Data.csproj" />
   </ItemGroup>
 
 </Project>

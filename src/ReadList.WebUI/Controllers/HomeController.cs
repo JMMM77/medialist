@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using ReadList.WebUI.Models;
+using MediaList.WebUI.Models;
 using System.Diagnostics;
 
-namespace ReadList.WebUI.Controllers
+namespace MediaList.WebUI.Controllers
 {
     public class HomeController : Controller
     {

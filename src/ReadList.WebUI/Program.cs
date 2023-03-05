@@ -1,18 +1,18 @@
-using ReadList.Data.Configuration;
-using ReadList.Data.Models;
-using ReadList.Services.Configuration;
+using MediaList.Data.Configuration;
+using MediaList.Data.Models;
+using MediaList.Services.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.Configure<ReadListDatabaseSettings>(
-    builder.Configuration.GetSection("ReadListDatabase"));
+builder.Services.Configure<MediaListDatabaseSettings>(
+    builder.Configuration.GetSection("MediaListDatabase"));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-builder.Services.AddReadListData(builder.Configuration);
+builder.Services.AddMediaListData(builder.Configuration);
 
-builder.Services.AddReadListServices();
+builder.Services.AddMediaListServices();
 
 var app = builder.Build();
 

@@ -1,6 +1,6 @@
-﻿using ReadList.Data.Models;
+﻿using MediaList.Data.Models;
 
-namespace ReadList.Data.Interfaces
+namespace MediaList.Data.Interfaces
 {
     public interface IMangaRepository
     {

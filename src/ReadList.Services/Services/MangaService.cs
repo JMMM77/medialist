@@ -1,10 +1,10 @@
 ﻿using AutoMapper;
-using ReadList.Data.Interfaces;
-using ReadList.Data.Models;
-using ReadList.Services.Interfaces;
-using ReadList.Services.Models;
+using MediaList.Data.Interfaces;
+using MediaList.Data.Models;
+using MediaList.Services.Interfaces;
+using MediaList.Services.Models;
 
-namespace ReadList.Services.Services
+namespace MediaList.Services.Services
 {
     public class MangaService : IMangaService
     {

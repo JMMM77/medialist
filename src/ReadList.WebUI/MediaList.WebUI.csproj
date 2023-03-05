@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
@@ -7,11 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ReadList.data\ReadList.Data.csproj" />
+    <ProjectReference Include="..\ReadList.data\MediaList.Data.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ReadList.Services\ReadList.Services.csproj" />
+    <ProjectReference Include="..\ReadList.Services\MediaList.Services.csproj" />
   </ItemGroup>
 
 </Project>

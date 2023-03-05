@@ -1,14 +1,14 @@
 ﻿using Microsoft.Extensions.Options;
 using MongoDB.Driver;
-using ReadList.Data.Models;
+using MediaList.Data.Models;
 
-namespace ReadList.Data.Infrastructure
+namespace MediaList.Data.Infrastructure
 {
-    public class ReadListDbContext
+    public class MediaListDbContext
     {
         public IMongoCollection<Manga> Mangas { get; set; }
 
-        public ReadListDbContext(IOptions<ReadListDatabaseSettings> options)
+        public MediaListDbContext(IOptions<MediaListDatabaseSettings> options)
         {
             var mongoClient = new MongoClient(
                 options.Value.ConnectionString);

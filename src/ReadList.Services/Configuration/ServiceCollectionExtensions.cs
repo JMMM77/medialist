@@ -1,12 +1,12 @@
-﻿using ReadList.Services.Interfaces;
-using ReadList.Services.Mappings;
-using ReadList.Services.Services;
+﻿using MediaList.Services.Interfaces;
+using MediaList.Services.Mappings;
+using MediaList.Services.Services;
 
-namespace ReadList.Services.Configuration
+namespace MediaList.Services.Configuration
 {
     public static class ServiceCollectionExtensions
     {
-        public static IServiceCollection AddReadListServices(this IServiceCollection services)
+        public static IServiceCollection AddMediaListServices(this IServiceCollection services)
         {
             services.AddAutoMapper(typeof(MangaProfile));
             services.AddScoped<IMangaService, MangaService>();

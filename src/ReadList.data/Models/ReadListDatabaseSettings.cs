@@ -1,6 +1,6 @@
-﻿namespace ReadList.Data.Models
+﻿namespace MediaList.Data.Models
 {
-    public class ReadListDatabaseSettings
+    public class MediaListDatabaseSettings
     {
         public string ConnectionString { get; set; } = null!;
 

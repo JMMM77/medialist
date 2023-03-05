@@ -1,14 +1,14 @@
-﻿using ReadList.Data.Infrastructure;
-using ReadList.Data.Interfaces;
+﻿using MediaList.Data.Infrastructure;
+using MediaList.Data.Interfaces;
 
-namespace ReadList.Data.Configuration
+namespace MediaList.Data.Configuration
 {
     public static class ServiceCollectionExtensions
     {
-        public static IServiceCollection AddReadListData (this IServiceCollection services, IConfiguration configuration)
+        public static IServiceCollection AddMediaListData (this IServiceCollection services, IConfiguration configuration)
         {
 
-            services.AddSingleton<ReadListDbContext>();
+            services.AddSingleton<MediaListDbContext>();
             services.AddSingleton<IMangaRepository, MangaRepository>();
 
             return services;
@@ -21,7 +21,7 @@ namespace ReadList.Data.Configuration
 
             if (services == null) return app;
 
-            var context = services.GetRequiredService<ReadListDbContext>();
+            var context = services.GetRequiredService<MediaListDbContext>();
 
             await Seed.DoSeedAsync(context);
 

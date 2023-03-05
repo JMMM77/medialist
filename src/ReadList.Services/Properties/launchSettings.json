@@ -1,6 +1,6 @@
 {
   "profiles": {
-    "ReadList.Services": {
+    "MediaList.Services": {
       "commandName": "Project",
       "launchBrowser": true,
       "environmentVariables": {

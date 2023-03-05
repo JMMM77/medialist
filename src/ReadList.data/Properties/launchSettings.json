@@ -1,6 +1,6 @@
 {
   "profiles": {
-    "ReadList.Data": {
+    "MediaList.Data": {
       "commandName": "Project",
       "launchBrowser": true,
       "environmentVariables": {

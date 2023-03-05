@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using ReadList.Data.Models;
-using ReadList.Services.Models;
+using MediaList.Data.Models;
+using MediaList.Services.Models;
 
-namespace ReadList.Services.Interfaces
+namespace MediaList.Services.Interfaces
 {
     public interface IMangaService
     {

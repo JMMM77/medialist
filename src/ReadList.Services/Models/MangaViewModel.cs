@@ -1,7 +1,7 @@
 ﻿using MongoDB.Bson.Serialization.Attributes;
 using MongoDB.Bson;
 
-namespace ReadList.Services.Models
+namespace MediaList.Services.Models
 {
     public class MangaViewModel
     {

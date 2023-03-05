@@ -1,4 +1,4 @@
-namespace ReadList.WebUI.Models
+namespace MediaList.WebUI.Models
 {
     public class ErrorViewModel
     {

@@ -1,8 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using MongoDB.Driver;
 using MediaList.Data.Models;
 using MediaList.Services.Interfaces;
-using MediaList.Services.Services;
+using MediaList.Services.Models;
 
 namespace MediaList.WebUI.Controllers
 {
@@ -23,16 +22,17 @@ namespace MediaList.WebUI.Controllers
 
         public IActionResult Create()
         {
-            return View();
+            return View(new MangaViewModel());
         }
 
-        public async Task<IActionResult> Details(string? id)
+        [HttpPost]
+        public IActionResult Create(MangaViewModel manga)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
+            return View("Details", manga.Id);
+        }
 
+        public async Task<IActionResult> Details(string id = "0")
+        {
             var manga = await _mangaService.Get(id);
 
             if (manga == null)
@@ -40,19 +40,31 @@ namespace MediaList.WebUI.Controllers
                 return NotFound();
             }
 
-            return View();
+            return View(manga);
         }
 
-        public IActionResult Edit()
+        public async Task<IActionResult> Edit(string id = "0")
         {
-            return View();
+            var manga = await _mangaService.Get(id);
+
+            if (manga == null)
+            {
+                return NotFound();
+            }
+
+            return View(manga);
         }
 
-        public IActionResult Delete()
+        public async Task<IActionResult> Delete(string id = "0")
         {
-            return View();
+            var manga = await _mangaService.Get(id);
+
+            if (manga == null)
+            {
+                return NotFound();
+            }
+
+            return View(manga);
         }
-
-
     }
 }

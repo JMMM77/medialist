@@ -3,6 +3,9 @@ using MongoDB.Bson;
 
 namespace MediaList.Data.Models
 {
+    /// <summary>
+    /// Used to represent a comic book
+    /// </summary>
     public class Manga : Media
     {
         /// <summary>

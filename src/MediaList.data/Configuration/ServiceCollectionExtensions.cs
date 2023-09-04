@@ -1,4 +1,4 @@
-﻿using MediaList.Data.Constants;
+﻿using MediaList.Data.SeedData;
 using MediaList.Data.Infrastructure;
 using MediaList.Data.Interfaces;
 

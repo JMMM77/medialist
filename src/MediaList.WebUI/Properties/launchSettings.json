@@ -18,6 +18,7 @@
     },
     "IIS Hosted": {
       "commandName": "IIS",
+      "hotReloadProfile": "aspnetcore",
       "launchBrowser": true,
       "launchUrl": "https://dev.medialist.jonathanmm",
       "environmentVariables": {

@@ -3,14 +3,13 @@ using MongoDB.Bson;
 
 namespace MediaList.Services.Models
 {
-    public class ItemViewModel
+    public abstract class ItemViewModel
     {
         /// <summary>
         /// ID of the Item
         /// </summary>
         [BsonId]
-        [BsonRepresentation(BsonType.ObjectId)]
-        public string? Id { get; set; }
+        public abstract string? Id { get; set; }
 
         /// <summary>
         /// Name of the Item

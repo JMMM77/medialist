@@ -2,12 +2,37 @@
 
 @model MangaViewModel
 @{
-  ViewData["Title"] = "Book";
+  ViewData["Title"] = "Managa";
 }
 <h1>@ViewData["Title"] Details</h1>
 <hr />
-<h2>Book Name</h2>
+<h2>Name test</h2>
 <p>@Model.Name</p>
-
+<h2>Alias</h2>
+<p>@Model.Alias</p>
+<h2>Type</h2>
+<p>@Model.Type</p>
+<h2>CoverImage</h2>
+<p>@Model.CoverImage</p>
+<h2>Author</h2>
+<p>@Model.Author</p>
+<h2>Genres</h2>
+<p>@Model.Genres</p>
+<h2>Released</h2>
+<p>@Model.Released</p>
+<h2>LastUpdated</h2>
+<p>@Model.LastUpdated</p>
+<h2>Chapters</h2>
+<p>@Model.Chapters</p>
+<h2>Volumes</h2>
+<p>@Model.Volumes</p>
+<h2>LastChapterRead</h2>
+<p>@Model.LastChapterRead</p>
+<h2>LastChapterRead</h2>
+<p>@Model.LastChapterRead</p>
+<h2>LinkedTo</h2>
+<p>@Model.LinkedTo</p>
+<h2>LastRead</h2>
+<p>@Model.LastRead</p>
 <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary" role="button">Edit</a>
 <a asp-action="" class="btn btn-primary">Back to List</a>

@@ -6,16 +6,22 @@ namespace MediaList.Services.Models
     public class MediaViewModel : ItemViewModel
     {
         /// <summary>
-        /// Alias of the Media
+        /// ID of the Item
+        /// </summary>
+        [BsonRepresentation(BsonType.ObjectId)]
+        public override string? Id { get; set; } = ObjectId.GenerateNewId().ToString();
+
+        /// <summary>
+        /// Alias of the Media 
         /// </summary>
         [BsonElement("Alias")]
         public string Alias { get; set; } = null!;
 
         /// <summary>
-        /// The Media Type
+        /// The Media Type Id
         /// </summary>
         [BsonElement("Type")]
-        public MediaTypeViewModel Type { get; set; } = null!;
+        public string Type { get; set; } = null!;
 
         /// <summary>
         /// The file location of the cover image
@@ -33,7 +39,7 @@ namespace MediaList.Services.Models
         /// The main Author of the Media
         /// </summary>
         [BsonElement("Genres")]
-        public GenreViewModel[] Genres { get; set; } = null!;
+        public string[] Genres { get; set; } = null!;
 
         /// <summary>
         /// When the Media was release

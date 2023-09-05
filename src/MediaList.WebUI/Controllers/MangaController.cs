@@ -5,11 +5,11 @@ using MediaList.Services.Models;
 
 namespace MediaList.WebUI.Controllers
 {
-    public class MangasController : Controller
+    public class MangaController : Controller
     {
         private readonly IMangaService _mangaService;
 
-        public MangasController(IMangaService MangasService)
+        public MangaController(IMangaService MangasService)
         {
             _mangaService = MangasService;
         }

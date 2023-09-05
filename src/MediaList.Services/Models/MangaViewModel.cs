@@ -23,11 +23,11 @@ namespace MediaList.Services.Models
         /// The Last time this manga was read
         /// </summary>
         [BsonDateTimeOptions]
-        public DateTime LastRead { get; set; } = DateTime.Now;
+        public DateTime? LastRead { get; set; }
 
         /// <summary>
         /// What other shows is it linked to
         /// </summary>
-        public string LinkedTo { get; set; } = string.Empty;
+        public string? LinkedTo { get; set; }
     }
 }

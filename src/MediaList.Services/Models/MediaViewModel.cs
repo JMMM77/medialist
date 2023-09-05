@@ -24,6 +24,11 @@ namespace MediaList.Services.Models
         public string Type { get; set; } = null!;
 
         /// <summary>
+        /// The name of the Media Type
+        /// </summary>
+        public string NamedType { get; set; } = null!;
+
+        /// <summary>
         /// The file location of the cover image
         /// </summary>
         [BsonElement("Cover Image")]
@@ -45,7 +50,7 @@ namespace MediaList.Services.Models
         /// When the Media was release
         /// </summary>
         [BsonDateTimeOptions]
-        public DateTime Released { get; set; } = DateTime.Today.Date;
+        public DateTime? Released { get; set; }
 
         /// <summary>
         /// The Last time this record was updated

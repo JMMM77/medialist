@@ -20,6 +20,47 @@
         @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
         @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
       </div>
+
+      <h2>Alias</h2>
+      <p>@Model.Alias</p>
+
+      <h2>Type</h2>
+      <p>@Model.Type</p>
+
+      <h2>CoverImage</h2>
+      <p>@Model.CoverImage</p>
+
+      <h2>Author</h2>
+      <p>@Model.Author</p>
+
+      <h2>Genres</h2>
+      <p>
+          @foreach (string genre in Model.Genres)
+          {
+              <span>@genre</span>
+          }
+      </p>
+
+      <h2>Released</h2>
+      <p>@Model.Released.Value.Date</p>
+
+      <h2>Chapters</h2>
+      <p>@Model.Chapters</p>
+
+      <h2>Volumes</h2>
+      <p>@Model.Volumes</p>
+
+      <h2>LastChapterRead</h2>
+      <p>@Model.LastChapterRead</p>
+
+      <h2>LinkedTo</h2>
+      <p>@Model.LinkedTo</p>
+
+      <h2>LastRead</h2>
+      <p>@Model.LastRead.Value.Date</p>
+            
+      <h2>LastUpdated</h2>
+      <p>@Model.LastUpdated.Date</p>
     </div>
     <div class="mt-2">
       <input type="submit" value="Save" class="btn btn-primary" />

@@ -1,0 +1,77 @@
+﻿@using MediaList.Services.Models
+@using System
+@model MangaViewModel
+@{
+  ViewData["Title"] = "Manga";
+}
+<h1>@Model.Name</h1>
+<div class="row">
+    @if (!string.IsNullOrWhiteSpace(Model.Alias))
+    {
+        <h2 class="text-muted h4 col-6">Alias: @Model.Alias</h2>
+    }
+    @if (!string.IsNullOrWhiteSpace(Model.NamedType))
+    {
+        <h2 class="text-muted h4 col-6">Type: @Model.NamedType</h2>
+    }
+</div>
+<hr />
+<div class="row text-center">
+    @if (!(Model.Chapters < 1))
+    {
+        <p class="col-md">Total Ch: @Model.Chapters</p>
+    }
+    @if (!string.IsNullOrWhiteSpace(Model.Author))
+    {
+        <p class="col-md">@Model.Author</p>
+    }
+    @if (Model.Released != null)
+    {
+        <p class="col-md">Release: @Model.Released.Value.ToShortDateString()</p>
+    }
+    @if (!(Model.LastChapterRead < 1))
+    {
+        <p class="col-md">Last Ch Read: @Model.LastChapterRead</p>
+    }
+</div>
+<div class="row">
+    @if (!string.IsNullOrWhiteSpace(Model.CoverImage))
+    {
+        <div class="col-md">
+            <img alt="" href="@Model.CoverImage">
+        </div>
+    }
+    @if (!string.IsNullOrWhiteSpace(Model.Description))
+    {
+        <div class="col-md">
+            <h2>Description</h2>
+            <p>@Model.Description</p>
+        </div>
+    }
+    @if (!(Model.Genres.Length < 1))
+    {
+        <div class="col-md">
+            <h2>Genres</h2>
+            <p>
+                @foreach (string genre in Model.Genres)
+                {
+                    <span>@genre</span>
+                }
+            </p>
+            @if (!(Model.Volumes < 1))
+            {
+                <h2>Volumes</h2>
+                <p>@Model.Volumes</p>
+            }
+            @if (!string.IsNullOrWhiteSpace(Model.LinkedTo))
+            {
+                <h2>LinkedTo</h2>
+                <p>@Model.LinkedTo</p>
+            }
+        </div>
+    }
+</div>
+
+<p class="text-muted h6 text-end">@(Model.LastRead != null ? "Last Read: " + @Model.LastRead.Value.Date.ToShortDateString() + " ": "")Last Updated: @Model.LastUpdated.Date.ToShortDateString()</p>
+<a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary" role="button">Edit</a>
+<a asp-action="" class="btn btn-primary">Back to List</a>

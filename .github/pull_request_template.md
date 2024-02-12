@@ -17,7 +17,6 @@
 <!-- Describe the tests you have added -->
 
 - [ ] I have included tests that fail without this PR but pass with it.
-- [ ] I have completed tests on Outlook for Windows and Outlook on the web (OWA)
 
 ### 📝 Checklist
 <!-- Put an `x` in all the boxes that apply -->

@@ -8,10 +8,12 @@ namespace MediaList.WebUI.Controllers
     public class MangaController : Controller
     {
         private readonly IMangaService _mangaService;
+        private readonly IMediaService _mediaService;
 
-        public MangaController(IMangaService MangasService)
+        public MangaController(IMangaService mangasService, IMediaService mediaService)
         {
-            _mangaService = MangasService;
+            _mediaService = mediaService;
+            _mangaService = mangasService;
         }
 
         public async Task<IActionResult> Index()
@@ -20,9 +22,15 @@ namespace MediaList.WebUI.Controllers
             return View(mangas);
         }
 
-        public IActionResult Create()
+        public async Task<IActionResult> CreateAsync()
         {
-            return View(new MangaViewModel());
+            var newManga = new MangaViewModel
+            {
+                AllMediaTypes = await _mediaService.GetAllMediaTypes(),
+                AllGenres = await _mediaService.GetAllGenres()
+            };
+
+            return View(newManga);
         }
 
         [HttpPost]

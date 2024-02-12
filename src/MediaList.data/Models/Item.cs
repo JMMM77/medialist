@@ -3,6 +3,9 @@ using MongoDB.Bson;
 
 namespace MediaList.Data.Models
 {
+    /// <summary>
+    /// Used to represent a generic object
+    /// </summary>
     public abstract class Item
     {
         /// <summary>

@@ -10,7 +10,7 @@ namespace MediaList.Services.Configuration
         {
             services.AddAutoMapper(typeof(MangaProfile));
             services.AddScoped<IGenreService, GenreService>();
-            services.AddScoped<IMediaTypeService, MediaTypeService>();
+            services.AddScoped<IMediaService, MediaService>();
             services.AddScoped<IMangaService, MangaService>();
 
             return services;

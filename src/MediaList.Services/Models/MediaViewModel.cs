@@ -41,7 +41,7 @@ namespace MediaList.Services.Models
         public string Author { get; set; } = null!;
 
         /// <summary>
-        /// The main Author of the Media
+        /// All the genres for this media
         /// </summary>
         [BsonElement("Genres")]
         public string[] Genres { get; set; } = null!;
@@ -57,5 +57,15 @@ namespace MediaList.Services.Models
         /// </summary>
         [BsonDateTimeOptions]
         public DateTime LastUpdated { get; set; } = DateTime.Now;
+
+        /// <summary>
+        /// Stores all the available media types
+        /// </summary>
+        public IEnumerable<MediaTypeViewModel> AllMediaTypes { get; set; } = null!;
+
+        /// <summary>
+        /// Stores all the available genres
+        /// </summary>
+        public IEnumerable<GenreViewModel> AllGenres { get; set; } = null!;
     }
 }

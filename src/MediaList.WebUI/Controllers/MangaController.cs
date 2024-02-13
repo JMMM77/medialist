@@ -2,27 +2,33 @@
 using MediaList.Data.Models;
 using MediaList.Services.Interfaces;
 using MediaList.Services.Models;
+using AutoMapper;
 
 namespace MediaList.WebUI.Controllers
 {
     public class MangaController : Controller
     {
         private readonly IMangaService _mangaService;
+        private readonly IMapper _mapper;
         private readonly IMediaService _mediaService;
 
-        public MangaController(IMangaService mangasService, IMediaService mediaService)
+        public MangaController(IMangaService mangasService, IMapper mapper, IMediaService mediaService)
         {
-            _mediaService = mediaService;
             _mangaService = mangasService;
+            _mapper = mapper;
+            _mediaService = mediaService;
+            
         }
 
+        [HttpGet]
         public async Task<IActionResult> Index()
         {
             var mangas = await _mangaService.Get();
             return View(mangas);
         }
 
-        public async Task<IActionResult> CreateAsync()
+        [HttpGet]
+        public async Task<IActionResult> Create()
         {
             var newManga = new MangaViewModel
             {
@@ -34,11 +40,21 @@ namespace MediaList.WebUI.Controllers
         }
 
         [HttpPost]
-        public IActionResult Create(MangaViewModel manga)
+        public async Task<IActionResult> Create(MangaViewModel manga)
         {
-            return View("Details", manga.Id);
+            if (!ModelState.IsValid)
+            {
+                manga.AllMediaTypes = await _mediaService.GetAllMediaTypes();
+                manga.AllGenres = await _mediaService.GetAllGenres();
+                return View(manga);
+            }
+
+            await _mangaService.Post(_mapper.Map<Manga>(manga));
+
+            return View(nameof(Details), manga);
         }
 
+        [HttpGet]
         public async Task<IActionResult> Details(string id = "0")
         {
             var manga = await _mangaService.Get(id);
@@ -48,9 +64,13 @@ namespace MediaList.WebUI.Controllers
                 return NotFound();
             }
 
+            manga.AllMediaTypes = await _mediaService.GetAllMediaTypes();
+            manga.AllGenres = await _mediaService.GetAllGenres();
+
             return View(manga);
         }
 
+        [HttpGet]
         public async Task<IActionResult> Edit(string id = "0")
         {
             var manga = await _mangaService.Get(id);
@@ -63,6 +83,7 @@ namespace MediaList.WebUI.Controllers
             return View(manga);
         }
 
+        [HttpGet]
         public async Task<IActionResult> Delete(string id = "0")
         {
             var manga = await _mangaService.Get(id);
@@ -73,6 +94,17 @@ namespace MediaList.WebUI.Controllers
             }
 
             return View(manga);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Delete(MangaViewModel manga)
+        {
+            if(manga.Id != null)
+            {
+                await _mangaService.Delete(manga.Id);
+            }
+
+            return RedirectToAction("Index");
         }
     }
 }

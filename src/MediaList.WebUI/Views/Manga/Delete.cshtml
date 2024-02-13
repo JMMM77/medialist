@@ -7,6 +7,11 @@
 <h1>Delete @ViewData["Title"]</h1>
 <hr />
 <h2>Are you sure you want to delete @Model.Name?</h2>
-
-<a asp-action="Delete" asp-route-id="@Model.Id" class="btn btn-sm btn-danger">Delete</a>
-<a asp-action="" class="btn btn-primary">Back to List</a>
+@using (Html.BeginForm("Delete", "Manga", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    <div class="mt-2">
+        <input type="submit" value="Delete" class="btn btn-sm btn-danger" />
+        <a asp-action="" class="btn btn-primary">Back to List</a>
+    </div>
+}

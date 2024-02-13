@@ -8,7 +8,7 @@ namespace MediaList.Services.Mappings
     {
         public MangaProfile()
         {
-            CreateMap<Manga, MangaViewModel>(MemberList.Destination);
+            CreateMap<Manga, MangaViewModel>(MemberList.Destination).ReverseMap();
         }
     }
 }

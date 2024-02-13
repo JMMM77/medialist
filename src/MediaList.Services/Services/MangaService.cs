@@ -39,6 +39,8 @@ namespace MediaList.Services.Services
 
         public async Task<MangaViewModel> Post(Manga newManga)
         {
+            newManga.LastUpdated = DateTime.Now;
+
             await _mangaRepository.CreateAsync(newManga);
 
             return _mapper.Map<MangaViewModel>(newManga);

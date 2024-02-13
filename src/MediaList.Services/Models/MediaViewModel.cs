@@ -1,5 +1,6 @@
 ﻿using MongoDB.Bson.Serialization.Attributes;
 using MongoDB.Bson;
+using System.ComponentModel.DataAnnotations;
 
 namespace MediaList.Services.Models
 {
@@ -26,13 +27,13 @@ namespace MediaList.Services.Models
         /// <summary>
         /// The name of the Media Type
         /// </summary>
-        public string NamedType { get; set; } = null!;
+        public string? NamedType { get; set; } = null!;
 
         /// <summary>
         /// The file location of the cover image
         /// </summary>
         [BsonElement("Cover Image")]
-        public string CoverImage { get; set; } = null!;
+        public string? CoverImage { get; set; } = null!;
 
         /// <summary>
         /// The main Author of the Media
@@ -61,11 +62,11 @@ namespace MediaList.Services.Models
         /// <summary>
         /// Stores all the available media types
         /// </summary>
-        public IEnumerable<MediaTypeViewModel> AllMediaTypes { get; set; } = null!;
+        public IEnumerable<MediaTypeViewModel>? AllMediaTypes { get; set; } = null!;
 
         /// <summary>
         /// Stores all the available genres
         /// </summary>
-        public IEnumerable<GenreViewModel> AllGenres { get; set; } = null!;
+        public IEnumerable<GenreViewModel>? AllGenres { get; set; } = null!;
     }
 }

@@ -4,67 +4,111 @@
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 
-<h1>Edit</h1>
-@using (Html.BeginForm())
+<h1>Edit @Model.Name</h1>
+@using (Html.BeginForm("Edit", "Manga", FormMethod.Post))
 {
-  @Html.AntiForgeryToken()
+    @Html.AntiForgeryToken()
 
-  <div class="form-horizontal">
-    <hr />
-    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-    <div class="form-group">
-      <h2>
-        @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
-      </h2>
-      <div class="col-md-10">
-        @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
-        @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
-      </div>
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            <h2>
+                @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+            </h2>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+            </div>
+            <h2>
+                @Html.LabelFor(model => model.Alias, htmlAttributes: new { @class = "control-label col-md-2" })
+            </h2>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Alias, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Alias, "", new { @class = "text-danger" })
+            </div>
+            <h2>
+                @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
+            </h2>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+            </div>
+            <h2>
+                @Html.LabelFor(model => model.Type, htmlAttributes: new { @class = "control-label col-md-2" })
+            </h2>
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.Type, new SelectList(Model.AllMediaTypes, "Id", "Name"), new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Type, "", new { @class = "text-danger" })
+            </div>
+            <h2>
+                @Html.LabelFor(model => model.CoverImage, htmlAttributes: new { @class = "control-label col-md-2" })
+            </h2>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.CoverImage, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.CoverImage, "", new { @class = "text-danger" })
+            </div>
+            <h2>
+                @Html.LabelFor(model => model.Author, htmlAttributes: new { @class = "control-label col-md-2" })
+            </h2>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Author, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Author, "", new { @class = "text-danger" })
+            </div>
+            <h2>
+                @Html.LabelFor(model => model.Genres, htmlAttributes: new { @class = "control-label col-md-2" })
+            </h2>
+            <div class="col-md-10">
+                @Html.ListBoxFor(model => model.Genres, new MultiSelectList(Model.AllGenres, "Id", "Name"), new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Genres, "", new { @class = "text-danger" })
+            </div>
+            <h2>
+                @Html.LabelFor(model => model.Released, htmlAttributes: new { @class = "control-label col-md-2" })
+            </h2>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Released, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Released, "", new { @class = "text-danger" })
+            </div>
+            <h2>
+                @Html.LabelFor(model => model.Chapters, htmlAttributes: new { @class = "control-label col-md-2" })
+            </h2>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Chapters, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Chapters, "", new { @class = "text-danger" })
+            </div>
+            <h2>
+                @Html.LabelFor(model => model.Volumes, htmlAttributes: new { @class = "control-label col-md-2" })
+            </h2>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Volumes, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Volumes, "", new { @class = "text-danger" })
+            </div>
+            <h2>
+                @Html.LabelFor(model => model.LastChapterRead, htmlAttributes: new { @class = "control-label col-md-2" })
+            </h2>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.LastChapterRead, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.LastChapterRead, "", new { @class = "text-danger" })
+            </div>
+            <h2>
+                @Html.LabelFor(model => model.LinkedTo, htmlAttributes: new { @class = "control-label col-md-2" })
+            </h2>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.LinkedTo, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.LinkedTo, "", new { @class = "text-danger" })
+            </div>
+            <h2>
+                @Html.LabelFor(model => model.LastRead, htmlAttributes: new { @class = "control-label col-md-2" })
+            </h2>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.LastRead, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.LastRead, "", new { @class = "text-danger" })
+            </div>
+        </div>
 
-      <h2>Alias</h2>
-      <p>@Model.Alias</p>
-
-      <h2>Type</h2>
-      <p>@Model.Type</p>
-
-      <h2>CoverImage</h2>
-      <p>@Model.CoverImage</p>
-
-      <h2>Author</h2>
-      <p>@Model.Author</p>
-
-      <h2>Genres</h2>
-      <p>
-          @foreach (string genre in Model.Genres)
-          {
-              <span>@genre</span>
-          }
-      </p>
-
-      <h2>Released</h2>
-      <p>@Model.Released.Value.Date</p>
-
-      <h2>Chapters</h2>
-      <p>@Model.Chapters</p>
-
-      <h2>Volumes</h2>
-      <p>@Model.Volumes</p>
-
-      <h2>LastChapterRead</h2>
-      <p>@Model.LastChapterRead</p>
-
-      <h2>LinkedTo</h2>
-      <p>@Model.LinkedTo</p>
-
-      <h2>LastRead</h2>
-      <p>@Model.LastRead.Value.Date</p>
-            
-      <h2>LastUpdated</h2>
-      <p>@Model.LastUpdated.Date</p>
+        <div class="mt-2">
+            <input type="submit" value="Save" class="btn btn-primary" />
+            <a asp-action="" class="btn btn-primary">Back to List</a>
+        </div>
     </div>
-    <div class="mt-2">
-      <input type="submit" value="Save" class="btn btn-primary" />
-      <a asp-action="" class="btn btn-primary">Back to List</a>
-    </div>
-  </div>
 }

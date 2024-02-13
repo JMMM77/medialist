@@ -80,7 +80,25 @@ namespace MediaList.WebUI.Controllers
                 return NotFound();
             }
 
+            manga.AllMediaTypes = await _mediaService.GetAllMediaTypes();
+            manga.AllGenres = await _mediaService.GetAllGenres();
+
             return View(manga);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Edit(MangaViewModel manga)
+        {
+            if (!ModelState.IsValid)
+            {
+                manga.AllMediaTypes = await _mediaService.GetAllMediaTypes();
+                manga.AllGenres = await _mediaService.GetAllGenres();
+                return View(manga);
+            }
+
+            await _mangaService.Update(manga.Id ?? "0", _mapper.Map<Manga>(manga));
+
+            return View(nameof(Details), manga);
         }
 
         [HttpGet]

@@ -1,7 +1,7 @@
 # Media List
 This project is used for users to be able to record any type of media that they have had an interest in whether it was good or bad.
 
-The reason I created this project, even though there are already existing solutions, is becuase those solutions tended be very geared towards a certain type of media like books or a different one for games. Also, they are not very customisable so if you wanted to add another image, note, or name to the media then you were not able to. This project is supposed to give a user more options to be able to personalise their media list in the way that they would like.
+The reason I created this project, even though there are already existing solutions, is because those solutions tended be very geared towards a certain type of media like books or a different one for games. Also, they are not very customisable so if you wanted to add another image, note, or name to the media then you were not able to. This project is supposed to give a user more options to be able to personalise their media list in the way that they would like.
 
 ## Pre-requisites
  - [ASP.NET 6](https://dotnet.microsoft.com/en-us/download/dotnet/6.0)
